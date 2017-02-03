@@ -1,39 +1,26 @@
 package com.sungshin;
 
-import org.junit.After;
-import org.junit.AfterClass;
-import org.junit.Before;
-import org.junit.BeforeClass;
-import org.junit.Test;
-import static org.junit.Assert.*;
+import junit.framework.Test;
+import junit.framework.TestCase;
+import junit.framework.TestSuite;
 
- 
-public class CalendarioTest {
-    
-    public CalendarioTest() {
-    }
-    
-    @BeforeClass
-    public static void setUpClass() {
-    }
-    
-    @AfterClass
-    public static void tearDownClass() {
-    }
-    
-    @Before
-    public void setUp() {
-    }
-    
-    @After
-    public void tearDown() {
-    }
- 
-    @Test
-    public void testAdd()
+public class CalcTest 
+    extends TestCase
+{
+
+    public CalcTest( String testName )
     {
-        Calc c  = new Calc();
-	assertEquals(30, c.add(10, 20));
+        super( testName );
     }
- 
+
+    public static Test suite()
+    {
+        return new TestSuite( CalcTest.class );
+    }
+
+    public void testAdd() {
+        Calc c = new Calc();
+        assertEquals(30, c.add(10, 20));
+    }
+
 }
